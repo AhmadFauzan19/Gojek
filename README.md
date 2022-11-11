@@ -1,4 +1,2 @@
 # Gojek
-This is my Role Assignment as Hacker
-Using Android Studio
-Recreate Gojek App UI
+This is my Role Assignment as Hacker using Android Studio about recreate Gojek App UI
