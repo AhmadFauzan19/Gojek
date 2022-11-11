@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.promo.PromoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/promo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/promo_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/title_promo"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/black"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/promo_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/xp_layout"
+                android:layout_width="380dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shadow_rounded_corner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginTop="15dp">
+
+                <ImageView
+                    android:id="@+id/image_star"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="15dp"
+                    android:contentDescription="@string/star_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_round_star" />
+
+                <TextView
+                    android:id="@+id/xp_text"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/xp_text"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/image_star"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/xp_progress"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="220dp"
+                    android:paddingTop="8dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-20dp"
+                    android:progress="30"
+                    android:progressTint="@color/green"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/xp_text"
+                    app:layout_constraintTop_toBottomOf="@id/xp_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/xp_info"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/xp_progress"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_round_arrow_forward_ios" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:id="@+id/voucher_layout"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/promo_rounded_corner"
+                app:layout_constraintTop_toBottomOf="@id/xp_layout"
+                app:layout_constraintStart_toStartOf="@id/xp_layout">
+
+                <TextView
+                    android:id="@+id/amount_voucher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@string/amount_voucher_text"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    app:srcCompat="@drawable/ic_round_arrow_forward_ios"
+                    app:layout_constraintTop_toTopOf="@id/amount_voucher"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/amount_voucher"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="4dp"
+                    android:contentDescription="@string/info"/>
+
+                <TextView
+                    android:id="@+id/vouchers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/amount_voucher"
+                    app:layout_constraintTop_toBottomOf="@id/amount_voucher"
+                    android:text="@string/vouchers"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginTop="-2dp"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/voucher_expired"
+                    android:text="@string/vouchers_expired"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/amount_voucher"
+                    app:layout_constraintTop_toBottomOf="@id/vouchers"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="-16dp"/>
+
+                <ProgressBar
+                    android:layout_width="101dp"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/voucher_expired"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:progressTint="@color/orange"
+                    android:progress="100" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:id="@+id/subscribe_layout"
+                android:background="@drawable/promo_rounded_corner"
+                app:layout_constraintStart_toEndOf="@id/voucher_layout"
+                app:layout_constraintTop_toTopOf="@id/voucher_layout"
+                app:layout_constraintEnd_toStartOf="@id/mission_layout">
+
+                <TextView
+                    android:id="@+id/amount_subscribe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@string/amount_subscribe_text"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    app:srcCompat="@drawable/ic_round_arrow_forward_ios"
+                    app:layout_constraintTop_toTopOf="@id/amount_subscribe"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/amount_subscribe"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="4dp"
+                    android:contentDescription="@string/info"/>
+
+                <TextView
+                    android:id="@+id/subscribe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/amount_subscribe"
+                    app:layout_constraintTop_toBottomOf="@id/amount_subscribe"
+                    android:text="@string/subcribe"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginTop="-2dp"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/subscribe_activity"
+                    android:text="@string/promo_activity"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/amount_subscribe"
+                    app:layout_constraintTop_toBottomOf="@id/subscribe"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="-16dp"/>
+
+                <ProgressBar
+                    android:layout_width="101dp"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/subscribe_activity"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:progressTint="@color/pink"
+                    android:progress="100" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:id="@+id/mission_layout"
+                android:background="@drawable/promo_rounded_corner"
+                app:layout_constraintEnd_toEndOf="@id/xp_layout"
+                app:layout_constraintTop_toTopOf="@id/voucher_layout">
+
+                <TextView
+                    android:id="@+id/amount_missions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@string/amount_missions"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    app:srcCompat="@drawable/ic_round_arrow_forward_ios"
+                    app:layout_constraintTop_toTopOf="@id/amount_missions"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/amount_missions"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="4dp"
+                    android:contentDescription="@string/info"/>
+
+                <TextView
+                    android:id="@+id/missions_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/amount_missions"
+                    app:layout_constraintTop_toBottomOf="@id/amount_missions"
+                    android:text="@string/missions_text"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginTop="-2dp"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ongoing"
+                    android:text="@string/on_going"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/amount_missions"
+                    app:layout_constraintTop_toBottomOf="@id/missions_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="-16dp"/>
+
+                <ProgressBar
+                    android:layout_width="101dp"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/ongoing"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:progressTint="@color/blue_logo"
+                    android:progress="100" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="380dp"
+                android:layout_height="50dp"
+                android:background="@drawable/promo_code_rounded_corner"
+                app:layout_constraintTop_toBottomOf="@id/voucher_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <FrameLayout
+                    android:id="@+id/code_promo_logo"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/promo_orange_rounded_corner"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:contentDescription="@string/promo_code"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_round_percent_white"
+                        android:layout_gravity="center"/>
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/promo_code"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/code_promo_logo"
+                    android:layout_marginStart="12dp"
+                    android:textSize="16sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:srcCompat="@drawable/ic_round_arrow_forward_ios"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/promo_code"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
